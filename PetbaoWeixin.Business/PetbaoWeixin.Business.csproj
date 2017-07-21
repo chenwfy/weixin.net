@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F21AD41-2F13-474A-BADF-9D38B682D7D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PetbaoWeixin.Business</RootNamespace>
+    <AssemblyName>PetbaoWeixin.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\PetbaoWeixin.Business.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSharpLib.Common">
+      <HintPath>..\RefDll\CSharpLib.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MIAP.ProtoBuf">
+      <HintPath>..\..\WeixinWeb\RefDll\MIAP.ProtoBuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefDll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\WeixinWeb\RefDll\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiSupportBiz.cs" />
+    <Compile Include="Message\ReplyNewsMessage.cs" />
+    <Compile Include="WeixinApi\AccessToken.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="MessageBiz.cs" />
+    <Compile Include="Message\MessageBase.cs" />
+    <Compile Include="Message\ReceiveEventClickMessage.cs" />
+    <Compile Include="Message\ReceiveEventLocationMessage.cs" />
+    <Compile Include="Message\ReceiveEventLocation_selectMessage.cs" />
+    <Compile Include="Message\ReceiveEventPic_photo_or_albumMessage.cs" />
+    <Compile Include="Message\ReceiveEventPic_sysphotoMessage.cs" />
+    <Compile Include="Message\ReceiveEventPic_weixinMessage.cs" />
+    <Compile Include="Message\ReceiveEventScancode_pushMessage.cs" />
+    <Compile Include="Message\ReceiveEventScancode_waitmsgMessage.cs" />
+    <Compile Include="Message\ReceiveEventScanMessage.cs" />
+    <Compile Include="Message\ReceiveEventUnsubscribeMessage.cs" />
+    <Compile Include="Message\ReceiveEventSubscribeMessage.cs" />
+    <Compile Include="Message\ReceiveEventViewMessage.cs" />
+    <Compile Include="Message\ReceiveImageMessage.cs" />
+    <Compile Include="Message\ReceiveLinkMessage.cs" />
+    <Compile Include="Message\ReceiveLocationMessage.cs" />
+    <Compile Include="Message\ReceiveTextMessage.cs" />
+    <Compile Include="Message\ReceiveVideoMessage.cs" />
+    <Compile Include="Message\ReceiveVoiceMessage.cs" />
+    <Compile Include="Message\ReplyTextMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeixinApi\AccessTokenApi.cs" />
+    <Compile Include="WeixinApi\ApiBase.cs" />
+    <Compile Include="WeixinApi\ApiRequest.cs" />
+    <Compile Include="WeixinApi\AuthAccessTokenApi.cs" />
+    <Compile Include="WeixinApi\CreateMenuApi.cs" />
+    <Compile Include="WeixinApi\DeleteMenuApi.cs" />
+    <Compile Include="WeixinApi\JsApiTicket.cs" />
+    <Compile Include="WeixinApi\JsTicketApi.cs" />
+    <Compile Include="WeixinApi\MediaDownApi.cs" />
+    <Compile Include="WeixinApi\SendCustomMessageApi.cs" />
+    <Compile Include="WeixinApi\SvcUserInfoApi.cs" />
+    <Compile Include="WeixinApi\WebUserInfoApi.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WeixinWeb\PetbaoWeixinWeb.RemoteService\PetbaoWeixinWeb.RemoteService.csproj">
+      <Project>{0e1de1e8-f784-4136-ba9f-cab6309203b0}</Project>
+      <Name>PetbaoWeixinWeb.RemoteService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetbaoWeixin.DataAccess\PetbaoWeixin.DataAccess.csproj">
+      <Project>{4a2de3b3-463f-4f93-8517-5c35543f4d25}</Project>
+      <Name>PetbaoWeixin.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetbaoWeixin.Entities\PetbaoWeixin.Entities.csproj">
+      <Project>{0557ed88-0345-4b80-b912-b04659bb4e22}</Project>
+      <Name>PetbaoWeixin.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetbaoWeixin.Utility\PetbaoWeixin.Utility.csproj">
+      <Project>{e8bca216-0b84-4f66-b165-1b193c6974b9}</Project>
+      <Name>PetbaoWeixin.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
